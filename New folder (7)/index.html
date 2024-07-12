@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yoroi - Light Wallet for Cardano</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+    <meta property="og:title" content="Yoroi - Light Wallet for Cardano" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yoroi-wallet.com/" />
+    <meta
+      property="og:description"
+      content="Yoroi is a Light Wallet for Cardano. It is Secure, Fast and Simple."
+    />
+    <meta
+      property="og:image"
+      content="https://yoroi-wallet.com./assets/logo-yoroi-blue.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Matomo -->
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-V4Z0YNYK0F&amp;l=dataLayer&amp;cx=c"
+    ></script>
+    <script async="" src="//analytics.emurgo-rnd.com/matomo.js"></script>
+    <script>
+      var _paq = (window._paq = window._paq || []);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function () {
+        var u = "//analytics.emurgo-rnd.com/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "1"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.async = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <style data-styled-components=""></style>
+    <style type="text/css">
+      iframe#launcher {
+        display: none;
+      }
+      a.logo {
+        position: relative;
+      }
+      a.nav-link {
+        position: relative;
+        color: #fff;
+        font-weight: 400;
+        z-index: 1000;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      a.nav-link:hover {
+        color: #18d0ab;
+      }
+      a.nav-link.active:hover {
+        color: #fff;
+      }
+      .lgRfSU:nth-child(2n-1) .image {
+        margin-left: 0;
+        display: block;
+        width: 180px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+      .lgRfSU:nth-child(2n-1) .image img {
+        margin: 0 auto;
+        float: none;
+        max-width: 180px;
+        height: auto;
+      }
+      .style__SquareText-ksRIsh {
+        text-align: center;
+      }
+      .map-bg {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        background: url("/assets/world-map.png") top center no-repeat;
+        background-size: 50%;
+        height: 1000px;
+        left: 0;
+        z-index: -1;
+      }
+      .watch-video {
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      .watch-video:hover > span span {
+        background-color: #2897cf;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      .eKknlP {
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      .faq-tab:hover {
+        background-color: #13359a;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        cursor: pointer;
+      }
+      .sub-title {
+        color: #18d0ab;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        position: relative;
+        display: block;
+      }
+      .features-wrapper {
+        width: 100%;
+        float: left;
+        position: relative;
+        height: auto;
+        margin-bottom: 90px;
+      }
+      .roadmap-wrapper {
+        position: relative;
+        float: left;
+        width: 100%;
+        background: #fff;
+        padding-bottom: 60px;
+      }
+      .tech-wrapper {
+        position: relative;
+        float: left;
+        width: 100%;
+        background: #f8faff;
+        padding-bottom: 60px;
+      }
+      .about-title {
+        padding-bottom: 20px;
+        color: #3153cb;
+        font-size: 34px;
+        font-family: Rubik;
+        font-weight: 500;
+      }
+      .sub-about-title {
+        font-family: Rubik;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        color: #18d0ab;
+        margin-bottom: 15px;
+      }
+      .sub-about-text {
+        color: #7b93ae;
+        font-size: 14px;
+        width: 486px;
+        height: auto;
+        line-height: 28px;
+        padding-bottom: 30px;
+      }
+      .section-title {
+        padding: 60px 0;
+        margin: 0;
+      }
+      .section-title.colored {
+        color: #3153cb;
+      }
+      .section-title-smaller {
+        padding: 60px 0 30px 0;
+        margin: 0;
+      }
+      .fancy-button,
+      .download-btn {
+        cursor: pointer;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        height: 42px;
+        width: 215px;
+        min-width: 160px;
+        border-radius: 100px;
+        margin-bottom: 5px;
+        box-shadow: 0 4px 8px 0 rgba(27, 208, 172, 0.4);
+        color: #fff;
+        display: block;
+        overflow: hidden;
+        font-weight: 400;
+        background: #18d0ab;
+        background: linear-gradient(94deg, #18d0ab 0%, #2890d4 100%);
+        border: 1px solid rgba(82, 252, 255, 0.25);
+      }
+      .download-btn {
+        position: relative;
+        top: 10px;
+        overflow: visible;
+      }
+      .main-btn {
+        height: auto;
+        box-shadow: 0 4px 8px 0 rgba(27, 208, 172, 0.4);
+        color: #fff;
+        font-weight: 400;
+        background: #18d0ab;
+        background: linear-gradient(94deg, #18d0ab 0%, #2890d4 100%);
+        border: 1px solid rgba(82, 252, 255, 0.25);
+        padding: 15px 30px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      .main-btn:hover {
+        background: #2897cf;
+        opacity: 0.8;
+      }
+      .terms-page-wrapper h1,
+      .terms-page-wrapper h2 {
+        font-weight: 500;
+        color: #3153cb;
+      }
+      .faq-wrapper {
+        margin-top: 240px;
+        position: relative;
+      }
+      .large-title {
+        font-size: 34px;
+        font-weight: 500;
+        color: #3153cb;
+      }
+      .faq-title {
+        font-weight: 500;
+        font-size: 18px;
+        color: #3153cb;
+        margin-bottom: 15px;
+      }
+      .faq-text,
+      .terms-page-wrapper p {
+        font-weight: 400;
+        color: #7b93ae;
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 35px;
+        padding-bottom: 35px;
+        border-bottom: 2px solid #d6dff9;
+      }
+      .faq-summary-text {
+        cursor: default;
+        padding-bottom: 40px;
+      }
+      .terms-page-wrapper p {
+        border-bottom: none;
+        margin-bottom: 35px;
+        padding-bottom: 0;
+      }
+      .large-number {
+        box-shadow: 0 4px 8px 0 rgba(27, 208, 172, 0.4);
+        color: #fff;
+        background: #18d0ab;
+        background: linear-gradient(94deg, #18d0ab 0%, #2890d4 100%);
+        border: 1px solid rgba(82, 252, 255, 0.25);
+        padding: 0;
+        border-radius: 100px;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        font-size: 22px;
+      }
+      .faq-current {
+        display: flex;
+        align-items: center;
+        margin-bottom: 44px;
+        border-bottom: 2px solid #d6dff9;
+        padding-bottom: 35px;
+      }
+      .cNfcFp {
+        padding: 10px 0;
+        margin-top: 0;
+        padding-right: 0;
+        color: #fff;
+        font-weight: 400;
+        font-size: 14px;
+      }
+      .cNfcFp:before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        border: 1px solid rgba(82, 252, 255, 0.25);
+        position: absolute;
+        border-radius: 100px;
+        margin-left: -35px;
+        z-index: 0;
+      }
+      .faq-active-tab {
+        display: flex;
+        align-items: center;
+        background: #1f47bc;
+        top: -20px;
+        position: relative;
+        padding: 20px 0;
+        border-bottom: 1px solid #2c62ca;
+      }
+      .cta-section {
+        background: #f8faff;
+        padding: 90px 0;
+        height: auto;
+        width: 100%;
+        text-align: center;
+      }
+      .cta-section-title {
+        font-size: 34px;
+        line-height: 42px;
+        margin-bottom: 25px;
+        padding-bottom: 0;
+        color: #3153cb;
+        font-weight: 500;
+      }
+      .cta-section-subtitle {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 25px;
+        color: #7b93ae;
+        font-weight: 400;
+      }
+      .cta-section .main-btn {
+        display: inline-flex;
+        margin: 0;
+        padding-bottom: 15px;
+        width: auto;
+      }
+      .FAQ-btn {
+        max-width: initial;
+        padding-bottom: 0;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        padding-bottom: 0;
+        font-weight: 400;
+      }
+      .tech-block {
+        background: #fff;
+        padding: 30px;
+        border: 1px solid rgba(49, 83, 203, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        height: 85px;
+        flex: 1;
+        float: left;
+        margin: 0;
+        transition-property: all;
+        transition-duration: 0.4s;
+        transition-timing-function: cubic-bezier(0.16, 1, 0.29, 0.99);
+        position: relative;
+      }
+      .tech-block:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 50px rgba(15, 31, 41, 0.15),
+          0 0 15px rgba(15, 31, 41, 0.06);
+      }
+      .margin-left-25 {
+        margin-left: 25% !important;
+      }
+      .tech-title {
+        color: #3153cb;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .block-section {
+        width: 100%;
+        border: 1px solid #f5f5ff;
+        margin-top: 30px;
+        border-radius: 20px;
+      }
+      .block-section-title {
+        text-align: center;
+        margin-top: 15px;
+      }
+      .tech-content {
+        color: #a7b3c1;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+      }
+      .tech-img img {
+        width: 64px;
+        height: auto;
+        margin-right: 25px;
+        top: 10px;
+        position: relative;
+      }
+      .tech-img.support img {
+        width: 64px;
+        height: auto;
+        margin-right: 25px;
+        top: -10px;
+        position: relative;
+      }
+      .tech-container {
+        display: block;
+        width: 100%;
+        float: left;
+        margin-left: -30px;
+      }
+      .jSScfm {
+        text-align: center;
+        width: calc(50% - 30px);
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: inline-flex;
+        padding: 15px;
+      }
+      .intro-block-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 100%;
+        box-shadow: 0 4px 8px 0 rgba(27, 208, 172, 0.4);
+        color: #fff;
+        background: #18d0ab;
+        background: linear-gradient(94deg, #18d0ab 0%, #2890d4 100%);
+        border: 1px solid rgba(82, 252, 255, 0.25);
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .intro-block-icon img {
+        width: 30px;
+        height: auto;
+        text-align: center;
+        display: flex;
+      }
+      .prev-link,
+      .next-link {
+        height: 60px;
+        width: 60px;
+        box-shadow: 0 4px 8px 0 rgba(27, 208, 172, 0.4);
+        color: #fff;
+        background: #18d0ab;
+        background: linear-gradient(94deg, #18d0ab 0%, #2890d4 100%);
+        border: 1px solid rgba(82, 252, 255, 0.25);
+        border-radius: 100px;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      .video-placeholder {
+        position: relative;
+      }
+      .video-placeholder:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        background: rgba(0, 0, 0, 0.65);
+        width: 100%;
+        height: 100%;
+      }
+      .play-modal {
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(27, 208, 172, 0.4);
+        color: #fff;
+        background: #18d0ab;
+        background: linear-gradient(94deg, #18d0ab 0%, #2890d4 100%);
+        border: 1px solid rgba(82, 252, 255, 0.25);
+        border-radius: 100px;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        position: absolute;
+        z-index: 9999;
+      }
+      .play-modal img {
+        width: 20px;
+        height: auto;
+        position: relative;
+        top: 25px;
+        left: 4px;
+      }
+      .prev-link .leftArrow,
+      .prev-link:hover:not([disabled]) .leftArrow {
+        background: url("/assets/arrow-left.svg") no-repeat;
+        position: relative;
+        left: 5px;
+        top: 3px;
+      }
+      .next-link .rightArrow,
+      .next-link:hover:not([disabled]) .rightArrow {
+        background: url("/assets/arrow-right.svg") no-repeat;
+        position: relative;
+        left: 7px;
+        top: 2px;
+      }
+      .prev-link:hover:not([disabled]),
+      .next-link:hover:not([disabled]) {
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        background: #2897cf;
+      }
+      .terms-page-wrapper {
+        position: relative;
+        margin-bottom: 0;
+        padding-bottom: 40px;
+      }
+      .collaborators-img {
+        position: relative;
+        float: left;
+        width: 100%;
+      }
+      .collaborators-img > div {
+        width: 25%;
+      }
+      .collaborators-img > div img {
+        width: 100%;
+        height: auto;
+      }
+      .kRfdD {
+        margin-right: 15px;
+      }
+      .page-title {
+        text-align: center;
+        color: #fff;
+        padding: 30px 0;
+        font-size: 34px;
+        font-weight: 500;
+        font-family: Rubik;
+      }
+      .page-subtitle {
+        text-align: center;
+        color: #7b93ae;
+        margin-bottom: 120px;
+      }
+      .page-subtitle a {
+        color: #7b93ae;
+        text-decoration: underline;
+      }
+      a.links {
+        padding: 0;
+        margin: 0;
+        border: 1px solid #52fcff;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        border-radius: 100px;
+        float: left;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+        transition: all 0.45s cubic-bezier(0.25, 1, 0.2, 1);
+      }
+      a.links:hover {
+        opacity: 0.75;
+      }
+      .footer-info {
+        display: block;
+        width: 100%;
+      }
+      .social-icons {
+        padding-top: 25px;
+        position: relative;
+        width: 100%;
+      }
+      .footer-copyrights {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        padding: 35px 0 10px 0;
+      }
+      @media only screen and (min-width: 991px) and (max-width: 1024px) {
+        .tech-container {
+          margin-left: 0;
+        }
+        .tech-block {
+          height: 350px;
+        }
+        .about-emurgo-section {
+          padding: 100px;
+        }
+        a.logo {
+          position: relative;
+          margin-left: 90px;
+        }
+      }
+      @media only screen and (min-width: 768px) and (max-width: 990px) {
+        a.logo {
+          position: relative;
+          margin-left: 90px;
+        }
+        .support-blocks .tech-block {
+          height: auto;
+          margin-bottom: 30px;
+          width: 100%;
+        }
+        .about-emurgo-section {
+          padding: 90px 60px;
+          height: auto;
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 220px) and (max-width: 767px) {
+        .about-emurgo-section {
+          padding: 90px 60px;
+          height: auto;
+          width: auto;
+        }
+        .features-wrapper > div {
+          width: 100%;
+          padding: 0;
+          margin-bottom: 30px;
+        }
+        .jSScfm {
+          width: 100%;
+        }
+        .tech-container {
+          margin-left: -15px;
+        }
+        .tech-block {
+          height: auto;
+        }
+        .dRQyzs {
+          height: auto;
+          width: 100%;
+        }
+        .hwaSaP a img {
+          margin-left: 0;
+        }
+        a.logo {
+          position: relative;
+          margin-left: 90px;
+        }
+        .support-blocks .tech-block {
+          height: auto;
+          margin-bottom: 30px;
+        }
+        .page-intro {
+          position: relative;
+          margin-top: -180px;
+          margin-bottom: 30px;
+          z-index: -1;
+        }
+        .sub-about-text {
+          width: 100%;
+          height: auto;
+        }
+        .page-title {
+          font-size: 30px;
+        }
+      }
+    </style>
+    <style type="text/css"></style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div data-reactroot="">
+        <div style="overflow: hidden">
+          <div class="Header__HContainer-ikhYYY ibuptW">
+            <!-- react-text: 4 --><!-- /react-text -->
+            <div class="css__Container-hHbSDV fqPWdg">
+              <div class="Header__HeaderAlt-islIts cetKPX">
+                <a class="logo" href="/"
+                  ><img
+                    class="Header__Logo-egROsK eNMhdT"
+                    src="/assets/logo.png"
+                    alt="Yoroi is a Web Light Wallet for Cardano Secure Fast Simple" /></a
+                ><a
+                  href="javascript:void(0);"
+                  class="icon"
+                  style="color: white; font-size: 30px"
+                  ><i class="fa fa-bars"></i
+                ></a>
+              </div>
+              <span class="Header__HeaderText-daYJSv eIlgru"
+                ><div class="Header__VTitleList-dqmqiR ZqLdx">
+                  <a class="logo" href="/"
+                    ><img
+                      class="Header__Logo-egROsK eNMhdT"
+                      src="/assets/logo.png"
+                      alt="Yoroi is a Web Light Wallet for Cardano Secure Fast Simple"
+                  /></a>
+                </div>
+                <div style="flex: 0.3 1 0%"></div>
+                <div
+                  class="Header__VTitleList-dqmqiR ZqLdx"
+                  style="flex: 0.5 1 0%; margin-top: 20px"
+                >
+                  <a class="nav-link active" aria-current="page" href="/"
+                    >Home</a
+                  >
+                </div>
+                <div
+                  class="Header__VTitleList-dqmqiR ZqLdx"
+                  style="flex: 0.5 1 0%; margin-top: 20px"
+                >
+                  <a class="nav-link" href="/about">About</a>
+                </div>
+                <div
+                  class="Header__VTitleList-dqmqiR ZqLdx"
+                  style="flex: 0.5 1 0%; margin-top: 20px"
+                >
+                  <a
+                    class="nav-link"
+                    target="_blank"
+                    href="https://emurgohelpdesk.zendesk.com/"
+                    >FAQ</a
+                  >
+                </div>
+                <div
+                  class="Header__VTitleList-dqmqiR ZqLdx"
+                  style="flex: 0.5 1 0%; margin-top: 20px"
+                >
+                  <a class="nav-link" href="/support">Support</a>
+                </div>
+                <div style="flex: 0.3 1 0%"></div>
+                <div
+                  class="Header__VTitleList-dqmqiR ZqLdx"
+                  style="z-index: 15; visibility: hidden"
+                >
+                  <div
+                    class="download-btn Download__DownloadTop-jMyoJZ hMjzfG"
+                    style="margin-top: -10px"
+                  >
+                    <label class="Download__DropdownButton-clqtcV ftUNuT"
+                      ><div
+                        style="
+                          height: 100%;
+                          padding: 0px 20px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        "
+                      >
+                        <p
+                          style="
+                            height: 100%;
+                            flex: 1 1 0%;
+                            text-align: left;
+                            padding: 0px;
+                            margin: 0px;
+                            display: flex;
+                            align-items: center;
+                          "
+                        >
+                          Download
+                        </p>
+                        <div><img src="/assets/arrow-down.svg" /></div></div
+                    ></label>
+                  </div>
+                </div>
+                <div style="flex: 0.1 1 0%"></div>
+                <div
+                  class="Header__VTitleList-dqmqiR ZqLdx"
+                  style="z-index: 15"
+                >
+                  <select class="Header__Selector-htZHAE bGRAGU">
+                    <option value="en" style="color: rgb(74, 80, 101)">
+                      ENGLISH
+                    </option>
+                    <option value="ja" style="color: rgb(74, 80, 101)">
+                      日本語
+                    </option>
+                  </select>
+                </div>
+                <div
+                  class="Plx Plx--bellow"
+                  style="
+                    width: 100%;
+                    height: 60px;
+                    background: rgb(49, 83, 203);
+                    left: 0px;
+                    top: 0px;
+                    position: fixed;
+                    z-index: 10;
+                    opacity: 1;
+                  "
+                >
+                  <div class="Header__Content-dOLsDz gRHztN">
+                    <div class="Header__NavFixed-eBLBNx kRfdD">
+                      <a class="logo" href="/"
+                        ><img
+                          class="Header__Logo-egROsK eNMhdT"
+                          src="/assets/logo.png"
+                          alt="Yoroi is a Web Light Wallet for Cardano Secure Fast Simple"
+                      /></a>
+                    </div>
+                    <div style="flex: 0.3 1 0%; margin-right: 45px"></div>
+                    <div
+                      class="Header__NavFixed-eBLBNx kRfdD"
+                      style="flex: 0.5 1 0%"
+                    >
+                      <a class="nav-link active" aria-current="page" href="/"
+                        >Home</a
+                      >
+                    </div>
+                    <div
+                      class="Header__NavFixed-eBLBNx kRfdD"
+                      style="flex: 0.5 1 0%"
+                    >
+                      <a class="nav-link" href="/about">About</a>
+                    </div>
+                    <div
+                      class="Header__NavFixed-eBLBNx kRfdD"
+                      style="flex: 0.5 1 0%"
+                    >
+                      <a
+                        class="nav-link"
+                        target="_blank"
+                        href="https://emurgohelpdesk.zendesk.com/"
+                        >FAQ</a
+                      >
+                    </div>
+                    <div
+                      class="Header__NavFixed-eBLBNx kRfdD"
+                      style="flex: 0.5 1 0%"
+                    >
+                      <a class="nav-link" href="/support">Support</a>
+                    </div>
+                    <div style="flex: 0.3 1 0%"></div>
+                    <div
+                      class="Header__NavFixed-eBLBNx kRfdD"
+                      style="z-index: 15; margin-top: -2px; visibility: hidden"
+                    >
+                      <div
+                        class="download-btn Download__DownloadTop-jMyoJZ hMjzfG"
+                        style="margin-top: -10px"
+                      >
+                        <label class="Download__DropdownButton-clqtcV ftUNuT"
+                          ><div
+                            style="
+                              height: 100%;
+                              padding: 0px 20px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          >
+                            <p
+                              style="
+                                height: 100%;
+                                flex: 1 1 0%;
+                                text-align: left;
+                                padding: 0px;
+                                margin: 0px;
+                                display: flex;
+                                align-items: center;
+                              "
+                            >
+                              Download
+                            </p>
+                            <div><img src="/assets/arrow-down.svg" /></div></div
+                        ></label>
+                      </div>
+                    </div>
+                    <div style="flex: 0.1 1 0%"></div>
+                    <div
+                      class="Header__NavFixed-eBLBNx kRfdD"
+                      style="margin-right: 35px; margin-top: 0px"
+                    >
+                      <select
+                        class="Header__Selector-htZHAE bGRAGU"
+                        style="margin-right: 7px"
+                      >
+                        <option value="en" style="color: rgb(74, 80, 101)">
+                          ENGLISH
+                        </option>
+                        <option value="ja" style="color: rgb(74, 80, 101)">
+                          日本語
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div></span
+              >
+            </div>
+            <div class="Header__Background-jkQsdX cnkcVU"></div>
+            <div class="Header__BackgroundB-eKvrfC dhUMBd"></div>
+            <div class="Header__BackgroundC-fkeijF dkbuxL"></div>
+            <div class="map-bg"></div>
+          </div>
+          <span
+            ><div
+              class="style__ContainerBottom-fAVXyy eVecQF css__Container-hHbSDV fqPWdg"
+            >
+              <!-- react-empty: 70 -->
+              <div class="hero_home css__Overflow-lhwhxR cBzxKf">
+                <div class="style__MainText-dwEjLj coKGgy">
+                  <div class="style__SubSubTitle-cdDYYU ebxsQh"></div>
+                  <div class="style__MainTitle-dtjpoN eqhXUC">
+                    <span class="style__YoroiInfo-hdxjNE hMaxuS"
+                      ><span
+                        >Your gateway to the<br />
+                        Cardano ecosystem</span
+                      ></span
+                    >
+                  </div>
+                  <div class="style__SubTitle-TyBUu BZBvd">
+                    <span
+                      >Yoroi Wallet is an open-source crypto wallet <br />
+                      that empowers your Web3 journey</span
+                    >
+                  </div>
+                  <div class="style__MainButtons-bXsZpV dVYILE">
+                    <div
+                      class="download-dropdown style__Download-oHunO kpGMrZ"
+                      style="margin-right: 20px"
+                    >
+                      <div class="style__DropdownButton-dzWXnz kJLWCQ">
+                        <div
+                          style="
+                            height: 100%;
+                            padding: 0px 25px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                          "
+                        >
+                          <p
+                            style="
+                              height: 100%;
+                              flex: 1 1 0%;
+                              text-align: left;
+                              padding: 0px;
+                              margin: 0px;
+                              display: flex;
+                              align-items: center;
+                            "
+                          >
+                            Download
+                          </p>
+                          <div><img src="/assets/arrow-down.svg" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="watch-video style__WatchVideo-cGFSZF kshsLn"
+                      style="margin-top: -7px"
+                    >
+                      <div style="width: 140px">
+                        <div class="style__WatchVideoText-jcMPAw dAODeQ">
+                          <!-- react-text: 89 -->
+                          <!-- /react-text --><!-- react-text: 90 -->watch the
+                          video<!-- /react-text --><!-- react-text: 91 -->
+                          <!-- /react-text -->
+                        </div>
+                      </div>
+                      <span
+                        ><span
+                          class="style__WatchVideoImage-eYkfCT hrXWZP"
+                        ></span
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="style__MainImage-egNGWp dkyClE"></div>
+              <div class="features-wrapper">
+                <div class="style__WrapperFeature-cOYeQM edydwY">
+                  <div class="image">
+                    <img
+                      class="style__SquareImage-beFqiw UCHcp"
+                      src="/assets/icon_secure.svg"
+                      alt="Yoroi is a Web Light Wallet for Cardano Secure Fast Simple"
+                    />
+                  </div>
+                  <div class="style__SquareText-ksRIsh AfyVg">
+                    <div class="style__SquareTextTitle-jLeNXC iGTlws">
+                      Secure
+                    </div>
+                    <div class="style__SquareTextText-xwlkP hpKiYl">
+                      <span class="sub-title"></span
+                      ><!-- react-text: 103 -->Yoroi Wallet is a self custodial
+                      open-source light wallet built in the open for the Cardano
+                      ecosystem. The level of transparency enhances the
+                      security. Anyone may explore or inspect the Yoroi source
+                      code on Github. Private keys are encrypted, and never
+                      shared with our servers or third party providers.<!-- /react-text -->
+                    </div>
+                  </div>
+                </div>
+                <div class="style__WrapperFeature-cOYeQM edydwY">
+                  <div class="image">
+                    <img
+                      class="style__SquareImage-beFqiw UCHcp"
+                      src="/assets/icon_fast.svg"
+                      alt="Yoroi - Fast Our innovation"
+                    />
+                  </div>
+                  <div class="style__SquareText-ksRIsh AfyVg">
+                    <div class="style__SquareTextTitle-jLeNXC iGTlws">Fast</div>
+                    <div class="style__SquareTextText-xwlkP hpKiYl">
+                      <span class="sub-title"></span
+                      ><!-- react-text: 111 -->Quickly access your ADA, NFTs,
+                      and Cardano Native Assets through your mobile device
+                      and/or browser extension. Yoroi’s lightweight design
+                      empowers you to seamlessly engage with the Cardano Web3
+                      ecosystem—including DEXs, DeFi platforms, and NFTs—without
+                      the burden of downloading the full blockchain.<!-- /react-text -->
+                    </div>
+                  </div>
+                </div>
+                <div class="style__WrapperFeature-cOYeQM edydwY">
+                  <div class="image">
+                    <img
+                      class="style__SquareImage-beFqiw UCHcp"
+                      src="/assets/icon_simple.svg"
+                      alt="Yoroi - Simple Our passion"
+                    />
+                  </div>
+                  <div class="style__SquareText-ksRIsh AfyVg">
+                    <div class="style__SquareTextTitle-jLeNXC iGTlws">
+                      Simple
+                    </div>
+                    <div class="style__SquareTextText-xwlkP hpKiYl">
+                      <span class="sub-title"></span
+                      ><!-- react-text: 119 -->We believe that software should
+                      have a simple structure and a beautiful user interface.
+                      Developed by EMURGO Fintech a division within EMURGO – a
+                      founding entity of Cardano blockchain – Yoroi was the
+                      first light wallet supporting Cardano ADA. We’ve been
+                      providing users with intuitive, scalable and robust
+                      innovation since 2018.<!-- /react-text -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tech-wrapper">
+              <div
+                class="css__Container-hHbSDV fqPWdg"
+                style="padding-bottom: 30px"
+              >
+                <div class="section-title css__SectionTitle-hBSiMO hoYioO">
+                  Features
+                </div>
+                <div
+                  class="tech-container Technologies__YoroiTechBlocksLarge-kgqNgf faFXya"
+                >
+                  <div class="Technologies__YoroiTechBlockLarge-gYNwcY jSScfm">
+                    <div
+                      class="tech-block Technologies__YoroiTechBlockWhiteLarge-eDqVRn cMljWX Technologies__YoroiTechBlockInner-epPTAq efTwOi"
+                    >
+                      <div
+                        class="Technologies__YoroiTechBlockWhiteLargeFlex-iyLPyR fYIaDt"
+                      >
+                        <div
+                          class="Technologies__YoroiTechBlockContainerFlex-jxTKTk iHNojm Technologies__YoroiTechBlockContainer-hnCgqP cugtnz"
+                        >
+                          <div class="Technologies__YoroiTechPad-eRluZU gmZfiA">
+                            <div
+                              class="Technologies__YoroiRoadBlockTitleRel-kTFwlz fNQgJR Technologies__YoroiTechBlockTitle-dQzVXA AUEq"
+                            >
+                              <a
+                                class="tech-title Technologies__YoroiTechLinkLarge-soTKE cTiKJp Technologies__YoroiTechLink-kGSTTW cFFFZV"
+                                >NFT Gallery</a
+                              >
+                            </div>
+                            <div
+                              class="Technologies__YoroiTechBlockContainerNoLPad-bihYcB kQeWOF"
+                            >
+                              <div
+                                class="tech-content Technologies__YoroiTechBlockContainerTextL-kkDGRn cduVoT"
+                              >
+                                <span
+                                  >Elevate your NFT experience. Display, manage,
+                                  and store your NFTs.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Technologies__YoroiTechBlockLarge-gYNwcY jSScfm">
+                    <div
+                      class="tech-block Technologies__YoroiTechBlockWhiteLarge-eDqVRn cMljWX Technologies__YoroiTechBlockInner-epPTAq efTwOi"
+                    >
+                      <div
+                        class="Technologies__YoroiTechBlockWhiteLargeFlex-iyLPyR fYIaDt"
+                      >
+                        <div
+                          class="Technologies__YoroiTechBlockContainerFlex-jxTKTk iHNojm Technologies__YoroiTechBlockContainer-hnCgqP cugtnz"
+                        >
+                          <div class="Technologies__YoroiTechPad-eRluZU gmZfiA">
+                            <div
+                              class="Technologies__YoroiRoadBlockTitleRel-kTFwlz fNQgJR Technologies__YoroiTechBlockTitle-dQzVXA AUEq"
+                            >
+                              <a
+                                class="tech-title Technologies__YoroiTechLinkLarge-soTKE cTiKJp Technologies__YoroiTechLink-kGSTTW cFFFZV"
+                                >Swap</a
+                              >
+                            </div>
+                            <div
+                              class="Technologies__YoroiTechBlockContainerNoLPad-bihYcB kQeWOF"
+                            >
+                              <div
+                                class="tech-content Technologies__YoroiTechBlockContainerTextL-kkDGRn cduVoT"
+                              >
+                                <span
+                                  >Find the best exchanges rates through
+                                  in-wallet swaps, powered by the MuesliSwap DEX
+                                  aggregator.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Technologies__YoroiTechBlockLarge-gYNwcY jSScfm">
+                    <div
+                      class="tech-block Technologies__YoroiTechBlockWhiteLarge-eDqVRn cMljWX Technologies__YoroiTechBlockInner-epPTAq efTwOi"
+                    >
+                      <div
+                        class="Technologies__YoroiTechBlockWhiteLargeFlex-iyLPyR fYIaDt"
+                      >
+                        <div
+                          class="Technologies__YoroiTechBlockContainerFlex-jxTKTk iHNojm Technologies__YoroiTechBlockContainer-hnCgqP cugtnz"
+                        >
+                          <div class="Technologies__YoroiTechPad-eRluZU gmZfiA">
+                            <div
+                              class="Technologies__YoroiRoadBlockTitleRel-kTFwlz fNQgJR Technologies__YoroiTechBlockTitle-dQzVXA AUEq"
+                            >
+                              <a
+                                class="tech-title Technologies__YoroiTechLinkLarge-soTKE cTiKJp Technologies__YoroiTechLink-kGSTTW cFFFZV"
+                                >Stake</a
+                              >
+                            </div>
+                            <div
+                              class="Technologies__YoroiTechBlockContainerNoLPad-bihYcB kQeWOF"
+                            >
+                              <div
+                                class="tech-content Technologies__YoroiTechBlockContainerTextL-kkDGRn cduVoT"
+                              >
+                                <span
+                                  >Earn ~3.5% by staking to your favorite stake
+                                  pool.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Technologies__YoroiTechBlockLarge-gYNwcY jSScfm">
+                    <div
+                      class="tech-block Technologies__YoroiTechBlockWhiteLarge-eDqVRn cMljWX Technologies__YoroiTechBlockInner-epPTAq efTwOi"
+                    >
+                      <div
+                        class="Technologies__YoroiTechBlockWhiteLargeFlex-iyLPyR fYIaDt"
+                      >
+                        <div
+                          class="Technologies__YoroiTechBlockContainerFlex-jxTKTk iHNojm Technologies__YoroiTechBlockContainer-hnCgqP cugtnz"
+                        >
+                          <div class="Technologies__YoroiTechPad-eRluZU gmZfiA">
+                            <div
+                              class="Technologies__YoroiRoadBlockTitleRel-kTFwlz fNQgJR Technologies__YoroiTechBlockTitle-dQzVXA AUEq"
+                            >
+                              <a
+                                class="tech-title Technologies__YoroiTechLinkLarge-soTKE cTiKJp Technologies__YoroiTechLink-kGSTTW cFFFZV"
+                                >Connect</a
+                              >
+                            </div>
+                            <div
+                              class="Technologies__YoroiTechBlockContainerNoLPad-bihYcB kQeWOF"
+                            >
+                              <div
+                                class="tech-content Technologies__YoroiTechBlockContainerTextL-kkDGRn cduVoT"
+                              >
+                                <span
+                                  >Interact with all of your favorite Cardano
+                                  DApps and protocols.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Technologies__YoroiTechBlockLarge-gYNwcY jSScfm">
+                    <div
+                      class="tech-block Technologies__YoroiTechBlockWhiteLarge-eDqVRn cMljWX Technologies__YoroiTechBlockInner-epPTAq efTwOi"
+                    >
+                      <div
+                        class="Technologies__YoroiTechBlockWhiteLargeFlex-iyLPyR fYIaDt"
+                      >
+                        <div
+                          class="Technologies__YoroiTechBlockContainerFlex-jxTKTk iHNojm Technologies__YoroiTechBlockContainer-hnCgqP cugtnz"
+                        >
+                          <div class="Technologies__YoroiTechPad-eRluZU gmZfiA">
+                            <div
+                              class="Technologies__YoroiRoadBlockTitleRel-kTFwlz fNQgJR Technologies__YoroiTechBlockTitle-dQzVXA AUEq"
+                            >
+                              <a
+                                class="tech-title Technologies__YoroiTechLinkLarge-soTKE cTiKJp Technologies__YoroiTechLink-kGSTTW cFFFZV"
+                                >Vote</a
+                              >
+                            </div>
+                            <div
+                              class="Technologies__YoroiTechBlockContainerNoLPad-bihYcB kQeWOF"
+                            >
+                              <div
+                                class="tech-content Technologies__YoroiTechBlockContainerTextL-kkDGRn cduVoT"
+                              >
+                                <span
+                                  >Have your say in the future of Cardano.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Technologies__YoroiTechBlockLarge-gYNwcY jSScfm">
+                    <div
+                      class="tech-block Technologies__YoroiTechBlockWhiteLarge-eDqVRn cMljWX Technologies__YoroiTechBlockInner-epPTAq efTwOi"
+                    >
+                      <div
+                        class="Technologies__YoroiTechBlockWhiteLargeFlex-iyLPyR fYIaDt"
+                      >
+                        <div
+                          class="Technologies__YoroiTechBlockContainerFlex-jxTKTk iHNojm Technologies__YoroiTechBlockContainer-hnCgqP cugtnz"
+                        >
+                          <div class="Technologies__YoroiTechPad-eRluZU gmZfiA">
+                            <div
+                              class="Technologies__YoroiRoadBlockTitleRel-kTFwlz fNQgJR Technologies__YoroiTechBlockTitle-dQzVXA AUEq"
+                            >
+                              <a
+                                class="tech-title Technologies__YoroiTechLinkLarge-soTKE cTiKJp Technologies__YoroiTechLink-kGSTTW cFFFZV"
+                                >Easy Onboarding</a
+                              >
+                            </div>
+                            <div
+                              class="Technologies__YoroiTechBlockContainerNoLPad-bihYcB kQeWOF"
+                            >
+                              <div
+                                class="tech-content Technologies__YoroiTechBlockContainerTextL-kkDGRn cduVoT"
+                              >
+                                Easily top-up your Yoroi Wallet to get started.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="css__ContainerGrey-emBqAg eSObji">
+              <div class="css__Container-hHbSDV fqPWdg">
+                <div
+                  class="section-title-smaller css__SectionTitle-hBSiMO hoYioO"
+                >
+                  Our Collaborators
+                </div>
+                <div
+                  class="collaborators-img Collaborators__CollaboratorsWrapper-iTVaQU iaSadI"
+                >
+                  <div>
+                    <a target="_blank" href="https://emurgo.io/"
+                      ><img
+                        src="./assets/emurgo-default.svg"
+                        alt="Emurgo - Creating a more connected and equitable world through Cardano blockchain"
+                        style="height: 50px"
+                    /></a>
+                  </div>
+                  <div>
+                    <a target="_blank" href="https://banxa.com/"
+                      ><img
+                        src="./assets/banxa-default.svg"
+                        alt="banxa"
+                        style="height: 25px"
+                    /></a>
+                  </div>
+                  <div>
+                    <a target="_blank" href="https://muesliswap.com/"
+                      ><img
+                        src="./assets/museliswap-default.svg"
+                        alt="iohk"
+                        style="height: 50px"
+                    /></a>
+                  </div>
+                  <div>
+                    <a target="_blank" href="https://cardanofoundation.org/"
+                      ><img
+                        src="./assets/cardano-default.svg"
+                        alt="Cardano"
+                        style="height: 50px"
+                    /></a>
+                  </div>
+                </div>
+              </div></div
+          ></span>
+          <div class="Footer__ContainerFooter-huCiHf dNUmul">
+            <div
+              class="Footer__ContainerHeight-eFZvkI jKIsAq css__Container-hHbSDV fqPWdg"
+            >
+              <div
+                class="Footer__RowContainer-gsiQtY bJojaU"
+                style="padding-top: 2.4rem; align-items: center"
+              >
+                <div class="Footer__LogoSize-fXWfGm fgVrXH">
+                  <img
+                    class="Footer__Logo-dhZTdE bHLDdY"
+                    src="/assets/logo.png"
+                    alt="Yoroi is a Web Light Wallet for Cardano Secure Fast Simple"
+                  />
+                </div>
+                <div class="Footer__LinkS-cFxSdx iNEsCt">
+                  <a class="nav-link" href="/">Home</a>
+                </div>
+                <div class="Footer__LinkS-cFxSdx iNEsCt">
+                  <a class="nav-link" href="/about">About</a>
+                </div>
+                <div class="Footer__LinkS-cFxSdx iNEsCt">
+                  <a
+                    class="nav-link"
+                    target="_blank"
+                    href="https://emurgohelpdesk.zendesk.com/"
+                    >FAQ</a
+                  >
+                </div>
+                <div class="Footer__LinkS-cFxSdx iNEsCt">
+                  <a class="nav-link" href="/support">Support</a>
+                </div>
+                <div class="Footer__LinkS-cFxSdx iNEsCt" style="flex: 1.7 1 0%">
+                  <a class="nav-link" href="/terms_and_conditions"
+                    >Terms &amp; Conditions</a
+                  >
+                </div>
+                <div style="flex: 0.1 1 0%"></div>
+                <div
+                  class="Footer__LinkS-cFxSdx iNEsCt"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                  "
+                >
+                  <div class="Footer__Download-dtaIlh KiwZp">
+                    <div class="Footer__DropdownButton-SrEMr jvVeCc">
+                      <div
+                        style="
+                          height: 100%;
+                          padding: 0px 20px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        "
+                      >
+                        <p
+                          style="
+                            height: 100%;
+                            flex: 1 1 0%;
+                            text-align: left;
+                            padding: 0px;
+                            margin: 0px;
+                            display: flex;
+                            align-items: center;
+                          "
+                        >
+                          Download
+                        </p>
+                        <div><img src="/assets/arrow-down.svg" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-info Footer__RowContainer-gsiQtY bJojaU">
+                <div class="social-icons">
+                  <div class="Footer__RowContainerIcons-cGWDQL jqPczM">
+                    <a
+                      class="links links-flex"
+                      target="_blank"
+                      href="https://discord.com/invite/AWEp2SG437"
+                      rel="noopener"
+                      ><img src="/assets/discord.svg" /></a
+                    ><a
+                      class="links"
+                      target="_blank"
+                      href="https://twitter.com/YoroiWallet"
+                      rel="noopener"
+                      ><img src="/assets/twitter-new.svg" /></a
+                    ><a
+                      class="links"
+                      target="_blank"
+                      href="https://www.youtube.com/channel/UCgFQ0hHuPO1QDcyP6t9KZTQ"
+                      rel="noopener"
+                      ><img src="/assets/youtube-new.svg" /></a
+                    ><a
+                      class="links"
+                      target="_blank"
+                      href="https://emurgo.io/press-news/#blogs"
+                      rel="noopener"
+                      ><img src="/assets/emurgo-new.svg" /></a
+                    ><a
+                      class="links"
+                      target="_blank"
+                      href="https://www.reddit.com/r/cardano/"
+                      rel="noopener"
+                      ><img src="/assets/reddit-new.svg" /></a
+                    ><a
+                      class="links"
+                      target="_blank"
+                      href="https://www.linkedin.com/company/emurgo_io"
+                      rel="noopener"
+                      ><img src="/assets/linkedin-new.svg"
+                    /></a>
+                  </div>
+                </div>
+                <div class="footer-copyrights">
+                  <div class="Footer__FooterText-hakmxb kiWlyp">
+                    All rights reserved | 2018-2022 Yoroi
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/bundle.js"></script>
+
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-100938263-3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("set", "anonymizeIp", true);
+      gtag("config", "UA-100938263-3");
+    </script>
+    <iframe
+      allow="join-ad-interest-group"
+      data-tagging-id="G-V4Z0YNYK0F"
+      data-load-time="1720754026493"
+      height="0"
+      width="0"
+      src="https://td.doubleclick.net/td/ga/rul?tid=G-V4Z0YNYK0F&amp;gacid=334880491.1720178987&amp;gtm=45je4790v9119058549za200&amp;dma=0&amp;gcd=13l3l3l3l1&amp;npa=0&amp;pscdl=noapi&amp;aip=1&amp;fledge=1&amp;frm=0&amp;z=367335449"
+      style="display: none; visibility: hidden"
+    ></iframe>
+  </body>
+</html>
